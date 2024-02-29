@@ -1,8 +1,8 @@
+import 'package:c_group_chat_with_ai/pages/home_page.dart';
 import 'package:c_group_chat_with_ai/registeration/register.dart';
 import 'package:c_group_chat_with_ai/registeration/sign_up.dart';
 import 'package:c_group_chat_with_ai/stateless_widget.dart';
 
-import '../app.dart';
 import '../pages/loading.dart';
 import '../services/io_service.dart';
 import '../services/navigation.dart';
@@ -68,7 +68,7 @@ class Login extends StatelessWidget {
           IO.green("${IO.t(11)}       << ---  |||  --- >> ");
           IO.n(10);
           await Future.delayed(Duration(seconds: 2));
-          App().home();
+          Navigation.push(HomePage());
           return;
         } else{
           IO.red("${IO.t(11)}    Noto'g'ri parol kiritdingiz");

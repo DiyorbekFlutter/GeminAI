@@ -15,7 +15,7 @@ class Register extends StatelessWidget {
       if(!valid){
         IO.red("${IO.t(11)}    Mavjud bo'lmagan bo'lim!!!");
         IO.red("${IO.t(11)}<<----------------------------->>");
-        IO.red("${IO.t(11)}        << ---  |  --- >> ");
+        IO.red("${IO.t(11)}       << ---  |||  --- >> ");
         IO.n(10);
         await Future.delayed(Duration(seconds: 2));
         IO.n(16);

@@ -1,3 +1,4 @@
+import 'package:c_group_chat_with_ai/pages/home_page.dart';
 import 'package:c_group_chat_with_ai/pages/loading.dart';
 import 'package:c_group_chat_with_ai/registeration/login.dart';
 import 'package:c_group_chat_with_ai/registeration/register.dart';
@@ -6,7 +7,6 @@ import 'package:c_group_chat_with_ai/services/navigation.dart';
 import 'package:c_group_chat_with_ai/services/network/communication_with_api.dart';
 import 'package:c_group_chat_with_ai/stateless_widget.dart';
 
-import '../app.dart';
 import '../services/io_service.dart';
 import '../services/network/api.dart';
 
@@ -125,7 +125,7 @@ class SignUp extends StatelessWidget {
           IO.green("${IO.t(11)}       << ---  |||  --- >> ");
           IO.n(10);
           await Future.delayed(Duration(seconds: 2));
-          App().home();
+          Navigation.push(HomePage());
           return;
         } else{
           IO.red("${IO.t(11)}    Kutilmaga xatolik yoz berdi");

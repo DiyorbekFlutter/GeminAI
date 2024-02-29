@@ -1,4 +1,4 @@
-import 'package:c_group_chat_with_ai/app.dart';
+import 'package:c_group_chat_with_ai/pages/home_page.dart';
 import 'package:c_group_chat_with_ai/pages/welcome.dart';
 import 'package:c_group_chat_with_ai/registeration/register.dart';
 import 'package:c_group_chat_with_ai/services/navigation.dart';
@@ -12,7 +12,8 @@ void main() async {
   Hive.init(directory);
   await Hive.openBox('${Variables.data}');
 
-  Navigation.push(Welcome());
+  // runApp(App());
+  Navigation.push(HomePage());
   // Future.delayed(Duration(seconds: 2)).then((value) => runApp(App()));
-  Future.delayed(Duration(seconds: 1)).then((value) => Navigation.push(Register()));
+  // Future.delayed(Duration(seconds: 1)).then((value) => Navigation.push(Register()));
 }

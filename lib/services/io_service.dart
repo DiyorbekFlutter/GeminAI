@@ -17,4 +17,12 @@ class IO{
   static void redStdout(Object? value) => stdout.write('\x1b[31m $value\x1b[0m');
   static void greenStdout(Object? value) => stdout.write('\x1b[32m $value\x1b[0m');
   static void blueStdout(Object? value) => stdout.write('\x1b[34m $value\x1b[0m');
+
+  static String input(String text, int t1, int t2){
+    n(2);
+    blue("${IO.t(t1)}    $text");
+    blue("${IO.t(t1)}<<--${'-' * text.length}-->>");
+    blueStdout("${IO.t(t1)}${' ' * t2}<< ---  |||  ... ");
+    return read;
+  }
 }
