@@ -11,7 +11,6 @@ const Map<String, String> en={
   '1. Yes':'1. Yes',
   '2. No':'2. No',
   'Enter your choice: ':'Enter your choice: ',
-  'chose id: ':'Chose ID: ',
   'Succesfully  posted':'Succesfully  posted',
   'smth went wrong':'Something went wrong',
   'Settings': 'Settings',

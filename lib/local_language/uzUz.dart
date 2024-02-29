@@ -17,4 +17,7 @@ const Map<String, String> uz={
   'Settings': 'Sozlamalar',
   'Profile': 'Shaxsiy kabinet',
   'Exit':'Chiqish',
+  'Typing': 'Yozmoqda',
+  'Loading': 'Yuklanmoqda',
+  'Back': 'Ortga',
 };
