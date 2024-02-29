@@ -35,16 +35,28 @@ class SignUp extends StatelessWidget {
       IO.blue("${IO.t(12)}Create Account\n");
       IO.blueStdout('${IO.t(12)}Name: ');
       name = IO.read;
-      if(name.toLowerCase().trim() == 'go to login') Navigation.push(Login());
+      if(name.toLowerCase().trim() == 'go to login'){
+        Navigation.push(Login());
+        return;
+      }
       IO.blueStdout('${IO.t(12)}Email: ');
       email = IO.read;
-      if(email.toLowerCase().trim() == 'go to login') Navigation.push(Login());
+      if(email.toLowerCase().trim() == 'go to login'){
+        Navigation.push(Login());
+        return;
+      }
       IO.blueStdout('${IO.t(12)}Password: ');
       password = IO.read;
-      if(password.toLowerCase().trim() == 'go to login') Navigation.push(Login());
+      if(password.toLowerCase().trim() == 'go to login'){
+        Navigation.push(Login());
+        return;
+      }
       IO.blueStdout('${IO.t(12)}Confirm password: ');
       confirmPassword = IO.read;
-      if(confirmPassword.toLowerCase().trim() == 'go to login') Navigation.push(Login());
+      if(confirmPassword.toLowerCase().trim() == 'go to login'){
+        Navigation.push(Login());
+        return;
+      }
 
       if(name.trim().isEmpty || !validateEmail(email) || !validatePassword(password) || password != confirmPassword) valid = false;
     } while(!valid);
@@ -52,6 +64,7 @@ class SignUp extends StatelessWidget {
     // Loading chiqarish
     Navigation.push(Loading());
 
+    // Userlar ro'yhatini mock apidan olish
     List? users = await CommunicationWithApi.getAll(Api.users);
 
     if(users != null){
@@ -113,6 +126,7 @@ class SignUp extends StatelessWidget {
           IO.n(10);
           await Future.delayed(Duration(seconds: 2));
           App().home();
+          return;
         } else{
           IO.red("${IO.t(11)}    Kutilmaga xatolik yoz berdi");
           IO.red("${IO.t(11)}<<------------------------------->>");

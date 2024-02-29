@@ -21,14 +21,14 @@ class Register extends StatelessWidget {
         IO.n(16);
       }
 
-      IO.blue('${IO.t(12)}Register\n');
-      IO.green('${IO.t(12)}1. Login');
-      IO.green('${IO.t(12)}2. Sign Up');
-      IO.n(1);
+      IO.blue('${IO.t(13)}Register\n');
+      IO.green('${IO.t(13)}1. Login');
+      IO.green('${IO.t(13)}2. Sign Up');
+      IO.n(3);
 
-      IO.blue("${IO.t(8)}              YOUR CHOICE");
-      IO.blue("${IO.t(8)}   <<----------------------------->>");
-      IO.blueStdout("${IO.t(8)}          << ---  |||  ... ");
+      IO.blue("${IO.t(10)}           YOUR CHOICE");
+      IO.blue("${IO.t(10)}<<----------------------------->>");
+      IO.blueStdout("${IO.t(10)}       << ---  |||  ... ");
       String s = IO.read;
 
       if(s=='1') {
