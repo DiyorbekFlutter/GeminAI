@@ -1,3 +1,4 @@
+
 const Map<String, String> ru={
   'description':"Добро пожаловать! Вы выбрали русский язык",
   'username': " Имя:",
@@ -21,4 +22,5 @@ const Map<String, String> ru={
    'Typing': 'Ввод текста',
   'Loading': 'Загрузка',
   'Back': 'Назад',
+  'Malumotlar not\'g\'ri kiritildi iltimos qaytadan kiriting':'Данные были введены неверно, пожалуйста, введите заново'
 };
