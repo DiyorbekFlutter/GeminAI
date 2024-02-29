@@ -63,7 +63,7 @@ class Login extends StatelessWidget {
 
       if(hasUser){
         if(password == userOfPassword){
-          IO.green("${IO.t(11)}    Muvofaqiyatli bajarildi!!!");
+          IO.green("${IO.t(11)}    Muvoffaqiyatli bajarildi!!!");
           IO.green("${IO.t(11)}<<------------------------------>>");
           IO.green("${IO.t(11)}       << ---  |||  --- >> ");
           IO.n(10);
@@ -71,7 +71,7 @@ class Login extends StatelessWidget {
           Navigation.push(HomePage());
           return;
         } else{
-          IO.red("${IO.t(11)}    Noto'g'ri parol kiritdingiz");
+          IO.red("${IO.t(11)}    Noto'g'ri parol kiritildi");
           IO.red("${IO.t(11)}<<------------------------------->>");
           IO.red("${IO.t(11)}        << ---  |||  --- >> ");
           IO.n(10);
@@ -80,7 +80,7 @@ class Login extends StatelessWidget {
           return;
         }
       } else{
-        IO.red("${IO.t(11)}    Bunday foydalanuvchi topilmadi");
+        IO.red("${IO.t(11)}    Bunday nomli foydalanuvchi topilmadi");
         IO.red("${IO.t(11)}<<--------------------------------->>");
         IO.red("${IO.t(11)}         << ---  |||  --- >> ");
         IO.n(10);
@@ -89,7 +89,7 @@ class Login extends StatelessWidget {
         return;
       }
     } else{
-      IO.red("${IO.t(11)}    Kutilmaga xatolik yoz berdi");
+      IO.red("${IO.t(11)}    Kutilmagan xatolik yuz berdi");
       IO.red("${IO.t(11)}<<------------------------------->>");
       IO.red("${IO.t(11)}        << ---  |||  --- >> ");
       IO.n(10);

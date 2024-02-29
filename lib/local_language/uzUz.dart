@@ -1,3 +1,4 @@
+
 const Map<String, String> uz={
   'description': "Hush kelibsiz! siz O'zbek tilini tanladinggiz",
   'username': "Username",
@@ -20,4 +21,5 @@ const Map<String, String> uz={
   'Typing': 'Yozmoqda',
   'Loading': 'Yuklanmoqda',
   'Back': 'Ortga',
+  'Malumotlar not\'g\'ri kiritildi iltimos qaytadan kiriting': ''
 };

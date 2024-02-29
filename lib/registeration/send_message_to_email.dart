@@ -17,12 +17,12 @@ Future<int?> senderMessageToEmail(String email) async {
 
   try {
     await send(message, smtpServer);
-    print("Muvofaqiyatli bajarildi");
+    print("Muvoffaqiyatli bajarildi!");
     return confirmationCode;
   } on MailerException {
-    print('Nimadir xato ketdi');
+    print('Nimadir xato ketdi!');
   } on SocketException {
-    print('Internet ulanishini tekshirob ko\'ring');
+    print('Internet ulanishini tekshirib ko\'ring');
   }
 
   return null;

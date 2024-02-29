@@ -24,7 +24,7 @@ class SignUp extends StatelessWidget {
       IO.n(20);
 
       if(!valid){
-        IO.red("${IO.t(8)}    Malumotlar not'g'ri kiritildi iltimos qaytadan kiriting");
+        IO.red("${IO.t(8)}    Malumotlar not'g'ri kiritildi, iltimos qaytadan kiriting!");
         IO.red("${IO.t(8)}<<----------------------------------------------------------->>");
         IO.red("${IO.t(8)}                       << ---  |||  --- >>");
         IO.n(10);
@@ -75,7 +75,7 @@ class SignUp extends StatelessWidget {
       if(!hasUser){
         accountRegistration(email.trim(), name.trim(), password.trim());
       } else{
-        IO.red("${IO.t(11)}    Avval ro'yhatdan o'tgansiz");
+        IO.red("${IO.t(11)}    Avval ro'yhatdan o'tgansiz!");
         IO.red("${IO.t(11)}<<------------------------------->>");
         IO.red("${IO.t(11)}        << ---  |||  --- >> ");
         IO.n(10);
@@ -83,7 +83,7 @@ class SignUp extends StatelessWidget {
         Navigation.push(Register());
       }
     } else{
-      IO.red("${IO.t(11)}    Kutilmaga xatolik yoz berdi");
+      IO.red("${IO.t(11)}    Kutilmagan xatolik yuz berdi!");
       IO.red("${IO.t(11)}<<------------------------------->>");
       IO.red("${IO.t(11)}        << ---  |||  --- >> ");
       IO.n(10);
@@ -103,7 +103,7 @@ class SignUp extends StatelessWidget {
     IO.n(16);
 
     if(resultEmail != null){
-      IO.blue("${IO.t(8)}    Emailingizga Tasdiqlash kodi yuborildi");
+      IO.blue("${IO.t(8)}    Emailingizga Tasdiqlash kodi yuborildi!");
       IO.blue("${IO.t(8)}<<------------------------------------------>>");
       IO.blueStdout("${IO.t(8)}           << ---  |||  ... ");
       String sms = IO.read;
@@ -120,7 +120,7 @@ class SignUp extends StatelessWidget {
         });
 
         if(result != null){
-          IO.green("${IO.t(11)}    Muvofaqiyatli bajarildi!!!");
+          IO.green("${IO.t(11)}    Muvoffaqiyatli bajarildi!!!");
           IO.green("${IO.t(11)}<<------------------------------>>");
           IO.green("${IO.t(11)}       << ---  |||  --- >> ");
           IO.n(10);
@@ -128,7 +128,7 @@ class SignUp extends StatelessWidget {
           Navigation.push(HomePage());
           return;
         } else{
-          IO.red("${IO.t(11)}    Kutilmaga xatolik yoz berdi");
+          IO.red("${IO.t(11)}    Kutilmagan xatolik yuz berdi!");
           IO.red("${IO.t(11)}<<------------------------------->>");
           IO.red("${IO.t(11)}        << ---  |||  --- >> ");
           IO.n(10);
@@ -136,7 +136,7 @@ class SignUp extends StatelessWidget {
           Navigation.push(Register());
         }
       } else {
-        IO.green("${IO.t(11)}    Account tasdiqlanmadi");
+        IO.green("${IO.t(11)}    Account tasdiqlanmadi!");
         IO.green("${IO.t(11)}<<------------------------->>");
         IO.green("${IO.t(11)}     << ---  |||  --- >> ");
         IO.n(10);
@@ -144,7 +144,7 @@ class SignUp extends StatelessWidget {
         Navigation.push(Register());
       }
     } else {
-      IO.red("${IO.t(11)}    Kutilmaga xatolik yoz berdi");
+      IO.red("${IO.t(11)}    Kutilmagan xatolik yuz berdi");
       IO.red("${IO.t(11)}<<------------------------------->>");
       IO.red("${IO.t(11)}        << ---  |||  --- >> ");
       IO.n(10);
