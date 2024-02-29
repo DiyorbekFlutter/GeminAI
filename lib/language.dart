@@ -10,7 +10,6 @@ class LanguageService{
     _language = language;
   }
 
-
   static void switchLanguage(String language){
     switch(language){
       case "1":{
