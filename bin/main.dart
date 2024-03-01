@@ -2,6 +2,7 @@ import 'package:c_group_chat_with_ai/pages/home_page.dart';
 import 'package:c_group_chat_with_ai/pages/welcome.dart';
 import 'package:c_group_chat_with_ai/registeration/register.dart';
 import 'package:c_group_chat_with_ai/services/navigation.dart';
+import 'package:c_group_chat_with_ai/services/network/communication_with_api.dart';
 import 'package:c_group_chat_with_ai/values.dart';
 import 'package:hive/hive.dart';
 import 'package:path/path.dart' as path;
@@ -12,8 +13,16 @@ void main() async {
   Hive.init(directory);
   await Hive.openBox('${Variables.data}');
 
-  // runApp(App());
+
+
+  // var response = await CommunicationWithApi.sendChatGPTRequest([
+  //   {"role": "system", "content": "You are a helpful assistant."},
+  //   {"role": "user", "content": "Who won the world series in 2020?"}
+  // ]);
+  //
+  // print(response);
+
+
   Navigation.push(HomePage());
-  // Future.delayed(Duration(seconds: 2)).then((value) => runApp(App()));
   // Future.delayed(Duration(seconds: 1)).then((value) => Navigation.push(Register()));
 }
