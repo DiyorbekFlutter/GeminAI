@@ -31,6 +31,10 @@ const Map<String, String> uz={
   'bolimyoq':' Mavjud bo\'lmagan bo\'lim!!!',
   'register': 'Ro\'yxatdan o\'tish',
   'login': 'Tizimga kirish',
+  'signup': 'Ro\'yxatdan o\'tish',
+  'internetsignali': 'Internet ulanishini tekshirib ko\'ring',
+  'tasdiqlanmadi': 'Tasdiqlanmadi!!!',
+
 
 
 };

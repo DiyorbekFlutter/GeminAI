@@ -29,6 +29,9 @@ const Map<String, String> en={
   'xatolik':'An unexpected error occurred!',
   'bolimyoq':'Section that does not exist!!!',
   'register': 'Registration',
-  'login':'Log in',
+  'login':'Log in' ,
+  'signup': 'Sign Up',
+  'internetsignali': 'Check your internet connection',
+  'tasdiqlanmadi': 'Not approved!!!',
 
 };
