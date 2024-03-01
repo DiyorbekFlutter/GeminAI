@@ -32,6 +32,5 @@ const Map<String, String> en={
   'login':'Log in' ,
   'signup': 'Sign Up',
   'internetsignali': 'Check your internet connection',
-  'tasdiqlanmadi': 'Not approved!!!',
-
+  'tasdiqlanmadi': 'Not approved!!! ',
 };
