@@ -1,3 +1,4 @@
+import 'package:c_group_chat_with_ai/pages/profile/show_email.dart';
 import 'package:c_group_chat_with_ai/stateless_widget.dart';
 
 import '../../services/io_service.dart';
@@ -39,7 +40,7 @@ class Profile extends StatelessWidget {
 
     switch(input){
       case '1':
-        // Navigation.push();
+        Navigation.push(ShowEmail());
         return;
       case '2':
         // Navigation.push();

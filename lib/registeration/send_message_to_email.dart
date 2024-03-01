@@ -4,6 +4,8 @@ import 'package:mailer/mailer.dart';
 import 'package:mailer/smtp_server.dart';
 import 'dart:math';
 
+import '../services/io_service.dart';
+
 Future<int?> senderMessageToEmail(String email) async {
   String username = 'quizcraft646@gmail.com';
   String password = 'mxlk saqd lsrv fqwl';
@@ -17,12 +19,16 @@ Future<int?> senderMessageToEmail(String email) async {
 
   try {
     await send(message, smtpServer);
-    print("Muvoffaqiyatli bajarildi!");
     return confirmationCode;
   } on MailerException {
     print('Nimadir xato ketdi!');
   } on SocketException {
-    print('Internet ulanishini tekshirib ko\'ring');
+    IO.n(15);
+    IO.red("${IO.t(11)}    Internet ulanishini tekshirib ko'ring");
+    IO.red("${IO.t(11)}<<----------------------------------------->>");
+    IO.red("${IO.t(11)}             << ---  |||  --- >> ");
+    IO.n(10);
+    await Future.delayed(Duration(seconds: 2));
   }
 
   return null;
