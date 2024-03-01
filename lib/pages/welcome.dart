@@ -4,16 +4,17 @@ import 'package:c_group_chat_with_ai/stateless_widget.dart';
 class Welcome extends StatelessWidget {
   @override
   Future<void> build() async {
-    IO.blue('-' * 115);
+    IO.n(1);
+    IO.blue('-' * 116);
     for(int i=0; i<8; i++) {
-      IO.blue('|${' ' * 113}|');
+      IO.blue('|${' ' * 114}|');
     }
-    IO.blueStdout('|${' ' * 47}');
+    IO.blueStdout('|${' ' * 48}');
     IO.greenStdout('Welcome to ChatGPT');
-    IO.blueStdout('${' ' * 46}|');
+    IO.blueStdout('${' ' * 48}|\n');
     for(int i=0; i<8; i++) {
-      IO.blue('|${' ' * 113}|');
+      IO.blue('|${' ' * 114}|');
     }
-    IO.blue('-' * 115);
+    IO.blue('-' * 116);
   }
 }

@@ -33,13 +33,13 @@ class Login extends StatelessWidget {
       IO.blue("${IO.t(12)}Login\n");
       IO.blueStdout('${IO.t(12)}Email: ');
       email = IO.read.trim();
-      if(email.toLowerCase().trim() == 'go to signup'){
+      if(email.toLowerCase() == 'go to signup'){
         Navigation.push(SignUp());
         return;
       }
       IO.blueStdout('${IO.t(12)}Password: ');
       password = IO.read.trim();
-      if(password.toLowerCase().trim() == 'go to signup'){
+      if(password.toLowerCase() == 'go to signup'){
         Navigation.push(SignUp());
         return;
       }

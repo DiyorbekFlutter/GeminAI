@@ -1,8 +1,7 @@
-import 'package:dio/dio.dart';
 
 class Api {
   static const String baseUrlGoogle = "https://generativelanguage.googleapis.com";
-  static const baseUrl = "65e04610d3db23f76248cbbc.mockapi.io";
+  static const baseUrl = "https://65e04610d3db23f76248cbbc.mockapi.io";
 
   static const String apiGetGeminiText = "/v1beta/models/gemini-pro:generateContent";
   static const users = "/users";

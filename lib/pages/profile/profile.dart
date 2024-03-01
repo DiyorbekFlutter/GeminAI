@@ -1,12 +1,9 @@
-import 'package:c_group_chat_with_ai/pages/profile/profile.dart';
-import 'package:c_group_chat_with_ai/services/navigation.dart';
+import 'package:c_group_chat_with_ai/stateless_widget.dart';
 
-import '../services/io_service.dart';
-import '../stateless_widget.dart';
-import 'chat_bot.dart';
-import 'settings.dart';
+import '../../services/io_service.dart';
+import '../../services/navigation.dart';
 
-class HomePage extends StatelessWidget {
+class Profile extends StatelessWidget {
   @override
   Future<void> build() async {
     String input;
@@ -25,10 +22,11 @@ class HomePage extends StatelessWidget {
       }
 
       IO.n(15);
-      IO.blue("${IO.t(13)}Home Page\n");
-      IO.green("${IO.t(13)}1. Chat bot");
-      IO.green("${IO.t(13)}2. Profile");
-      IO.green("${IO.t(13)}3. Settings");
+      IO.blue("${IO.t(13)}Profile\n");
+      IO.green("${IO.t(13)}1. Show email");
+      IO.green("${IO.t(13)}2. Show password");
+      IO.red("${IO.t(13)}4. Logout");
+      IO.red("${IO.t(13)}3. Delete account");
 
       IO.n(1);
       IO.blue("${IO.t(10)}            YOUR CHOICE");
@@ -36,18 +34,21 @@ class HomePage extends StatelessWidget {
       IO.blueStdout("${IO.t(10)}        << ---  |||  ... ");
       input = IO.read;
 
-      validInput = ['1', '2', '3'].contains(input);
+      validInput = ['1', '2', '3', '4'].contains(input);
     } while(!validInput);
 
     switch(input){
       case '1':
-        Navigation.push(ChatBot());
+        // Navigation.push();
         return;
       case '2':
-        Navigation.push(Profile());
+        // Navigation.push();
         return;
       case '3':
-        Navigation.push(Settings());
+        // Navigation.push();
+        return;
+      case '4':
+      // Navigation.push();
         return;
     }
   }

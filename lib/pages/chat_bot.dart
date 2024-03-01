@@ -41,19 +41,12 @@ class ChatBot extends StatelessWidget {
       var text = await CommunicationWithApi.postToGemini(input);
 
       if(text != null){
-        await for(var e in animationPrint(text)){
+        await for(var e in IO.animationPrint(text)){
           IO.greenStdout(e);
         }
       } else{
         IO.red("Kutilmagan xatolik yuz berdi");
       }
-    }
-  }
-
-  Stream<String> animationPrint(String text) async* {
-    for(int i=0; i<text.length; i++){
-      await Future.delayed(Duration(milliseconds: 5));
-      yield text[i];
     }
   }
 }
