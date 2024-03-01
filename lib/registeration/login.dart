@@ -5,9 +5,11 @@ import 'package:c_group_chat_with_ai/stateless_widget.dart';
 
 import '../pages/loading.dart';
 import '../services/io_service.dart';
+import '../services/local_database.dart';
 import '../services/navigation.dart';
 import '../services/network/api.dart';
 import '../services/network/communication_with_api.dart';
+import 'package:hive/hive.dart';
 
 class Login extends StatelessWidget {
   @override
@@ -67,6 +69,8 @@ class Login extends StatelessWidget {
           IO.green("${IO.t(11)}<<------------------------------>>");
           IO.green("${IO.t(11)}       << ---  |||  --- >> ");
           IO.n(10);
+          Hive.box('${Variables.data}').put('${Variables.registered}', true);
+          Hive.box('${Variables.data}').put('${Variables.email}', email);
           await Future.delayed(Duration(seconds: 2));
           Navigation.push(HomePage());
           return;

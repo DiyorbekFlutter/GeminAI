@@ -9,9 +9,9 @@ class Welcome extends StatelessWidget {
     for(int i=0; i<8; i++) {
       IO.blue('|${' ' * 114}|');
     }
-    IO.blueStdout('|${' ' * 48}');
-    IO.greenStdout('Welcome to ChatGPT');
-    IO.blueStdout('${' ' * 48}|\n');
+    IO.blueStdout('|${' ' * 47}');
+    IO.greenBorder(' Welcome to ChatGPT ');
+    IO.blueStdout('${' ' * 47}|\n');
     for(int i=0; i<8; i++) {
       IO.blue('|${' ' * 114}|');
     }

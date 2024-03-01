@@ -7,6 +7,10 @@ class IO{
   static void n(int x) => print('\n' * (x-1));
 
   static void border(Object? value) => print('\x1b[51m$value\x1b[0m');
+  static void greenBorder(Object? value) => stdout.write('\x1b[51m\x1b[32m$value\x1b[0m\x1b[0m');
+  static void blueBorder(Object? value) => stdout.write('\x1b[51m\x1b[34m$value\x1b[0m\x1b[0m');
+  static void redBorder(Object? value) => stdout.write('\x1b[51m\x1b[31m$value\x1b[0m\x1b[0m');
+
   static void bold(Object? value) => print('\x1B[1m$value\x1B[0m');
   static void red(Object? value) => print('\x1b[31m$value\x1b[0m');
   static void green(Object? value) => print('\x1b[32m$value\x1b[0m');
