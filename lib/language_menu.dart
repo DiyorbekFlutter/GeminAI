@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:c_group_chat_with_ai/pages/settings.dart';
 import 'package:c_group_chat_with_ai/services/extensions_service.dart';
 import 'package:c_group_chat_with_ai/services/navigation.dart';
