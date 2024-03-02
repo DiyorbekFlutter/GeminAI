@@ -33,16 +33,23 @@ class Login extends StatelessWidget {
 
       IO.blue("${IO.t(12)}Login\n");
       IO.blueStdout('${IO.t(12)}Email: ');
-      email = IO.read.trim();
+      email = IO.read;
+
       if(email.toLowerCase() == 'go to signup'){
-        Navigation.push(SignUp());
+        Navigation.pushReplacement(SignUp());
         return;
+      } else if(email.toLowerCase() == 'exit'){
+        Navigation.pop();
       }
+
       IO.blueStdout('${IO.t(12)}Password: ');
-      password = IO.read.trim();
+      password = IO.read;
+
       if(password.toLowerCase() == 'go to signup'){
-        Navigation.push(SignUp());
+        Navigation.pushReplacement(SignUp());
         return;
+      } else if(password.toLowerCase() == 'exit'){
+        Navigation.pop();
       }
 
       if(email.isEmpty || password.isEmpty) valid = false;
@@ -74,7 +81,7 @@ class Login extends StatelessWidget {
           Values.emailSave(email);
 
           await Future.delayed(Duration(seconds: 2));
-          Navigation.push(HomePage());
+          Navigation.pushAndRemoveUntil(HomePage());
           return;
         } else{
           IO.red("${IO.t(11)}    Noto'g'ri parol kiritildi");
@@ -82,7 +89,7 @@ class Login extends StatelessWidget {
           IO.red("${IO.t(11)}        << ---  |||  --- >> ");
           IO.n(10);
           await Future.delayed(Duration(seconds: 2));
-          Navigation.push(Login());
+          Navigation.pushReplacement(Login());
           return;
         }
       } else{
@@ -91,7 +98,7 @@ class Login extends StatelessWidget {
         IO.red("${IO.t(11)}         << ---  |||  --- >> ");
         IO.n(10);
         await Future.delayed(Duration(seconds: 2));
-        Navigation.push(Register());
+        Navigation.popUntil();
         return;
       }
     } else{
@@ -100,7 +107,7 @@ class Login extends StatelessWidget {
       IO.red("${IO.t(11)}        << ---  |||  --- >> ");
       IO.n(10);
       await Future.delayed(Duration(seconds: 2));
-      Navigation.push(Register());
+      Navigation.popUntil();
       return;
     }
   }

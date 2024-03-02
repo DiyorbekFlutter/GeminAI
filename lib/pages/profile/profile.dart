@@ -1,3 +1,4 @@
+import 'package:c_group_chat_with_ai/pages/profile/delete_account.dart';
 import 'package:c_group_chat_with_ai/pages/profile/logout.dart';
 import 'package:c_group_chat_with_ai/pages/profile/show_email.dart';
 import 'package:c_group_chat_with_ai/pages/profile/show_password.dart';
@@ -51,7 +52,7 @@ class Profile extends StatelessWidget {
         Navigation.push(Logout());
         return;
       case '4':
-      // Navigation.push();
+      Navigation.push(DeleteAccount());
         return;
     }
   }

@@ -33,7 +33,7 @@ class ChatBot extends StatelessWidget {
       input = IO.read;
 
       if(input.trim().toLowerCase() == 'exit'){
-        Navigation.push(HomePage());
+        Navigation.pushAndRemoveUntil(HomePage());
         return;
       }
 

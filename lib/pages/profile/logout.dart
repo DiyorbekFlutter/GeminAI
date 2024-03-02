@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:c_group_chat_with_ai/pages/profile/profile.dart';
+import 'package:c_group_chat_with_ai/registeration/register.dart';
 import 'package:c_group_chat_with_ai/services/local_database.dart';
 import 'package:c_group_chat_with_ai/services/navigation.dart';
 import 'package:c_group_chat_with_ai/stateless_widget.dart';
@@ -24,14 +25,14 @@ class Logout extends StatelessWidget {
       case '1':
         Values.emailSave('');
         Values.registeredSave('false');
-        exit(0);
+        Navigation.pushAndRemoveUntil(Register());
       default:
         IO.n(15);
         IO.red("${IO.t(11)}     Bekor qilindi");
         IO.red("${IO.t(11)}<<------------------->>");
         IO.red("${IO.t(11)}  << ---  |||  --- >> ");
         IO.n(6);
-        await Navigation.push(Profile());
+        await Navigation.pop();
         return;
     }
   }

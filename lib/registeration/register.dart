@@ -6,6 +6,8 @@ import '../services/io_service.dart';
 import 'login.dart';
 
 class Register extends StatelessWidget {
+  static String id = "/register";
+
   @override
   Future<void> build() async {
     bool valid = true;

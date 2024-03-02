@@ -36,34 +36,49 @@ class SignUp extends StatelessWidget {
       IO.blue("${IO.t(12)}Create Account\n");
       IO.blueStdout('${IO.t(12)}Name: ');
       name = IO.read;
-      if(name.toLowerCase().trim() == 'go to login'){
-        Navigation.push(Login());
+
+      if(name.toLowerCase() == 'go to login'){
+        Navigation.pushReplacement(Login());
         return;
+      } else if(name.toLowerCase() == "exit"){
+        Navigation.pop();
       }
+
       IO.blueStdout('${IO.t(12)}Email: ');
       email = IO.read;
-      if(email.toLowerCase().trim() == 'go to login'){
-        Navigation.push(Login());
+
+      if(email.toLowerCase() == 'go to login'){
+        Navigation.pushReplacement(Login());
         return;
+      } else if(email.toLowerCase() == "exit"){
+        Navigation.pop();
       }
+
       IO.blueStdout('${IO.t(12)}Password: ');
       password = IO.read;
+
       if(password.toLowerCase().trim() == 'go to login'){
-        Navigation.push(Login());
+        Navigation.pushReplacement(Login());
         return;
+      } else if(password.toLowerCase() == "exit"){
+        Navigation.pop();
       }
+
       IO.blueStdout('${IO.t(12)}Confirm password: ');
       confirmPassword = IO.read;
+
       if(confirmPassword.toLowerCase().trim() == 'go to login'){
-        Navigation.push(Login());
+        Navigation.pushReplacement(Login());
         return;
+      } else if(name.toLowerCase() == "exit"){
+        Navigation.pop();
       }
 
       if(name.trim().isEmpty || !validateEmail(email) || !validatePassword(password) || password != confirmPassword) valid = false;
     } while(!valid);
 
     // Loading chiqarish
-    Navigation.push(Loading());
+    Navigation.pushReplacement(Loading());
 
     // Userlar ro'yhatini mock apidan olish
     List? users = await CommunicationWithApi.getAll(Api.users);
@@ -81,7 +96,8 @@ class SignUp extends StatelessWidget {
         IO.red("${IO.t(11)}        << ---  |||  --- >> ");
         IO.n(10);
         await Future.delayed(Duration(seconds: 2));
-        Navigation.push(Register());
+        Navigation.pushAndRemoveUntil(Register());
+        return;
       }
     } else{
       IO.red("${IO.t(11)}    Kutilmagan xatolik yuz berdi!");
@@ -89,14 +105,12 @@ class SignUp extends StatelessWidget {
       IO.red("${IO.t(11)}        << ---  |||  --- >> ");
       IO.n(10);
       await Future.delayed(Duration(seconds: 2));
-      Navigation.push(Register());
+      Navigation.pushAndRemoveUntil(Register());
     }
   }
 
 
   void accountRegistration(String email, String name, String password) async {
-    // Loading chiqarish
-    Navigation.push(Loading());
 
     // Emailga SMS yuborish
     int? resultEmail = await senderMessageToEmail(email);
@@ -111,7 +125,7 @@ class SignUp extends StatelessWidget {
 
       if(resultEmail.toString() == sms){
         // Loading chiqarish
-        Navigation.push(Loading());
+        Navigation.pushReplacement(Loading());
 
         // Mock apiga malumotlarni yuborish
         Map<String, dynamic>? result = await CommunicationWithApi.toPost(Api.users, {
@@ -131,7 +145,7 @@ class SignUp extends StatelessWidget {
           Values.emailSave(email);
 
           await Future.delayed(Duration(seconds: 2));
-          Navigation.push(HomePage());
+          Navigation.pushAndRemoveUntil(HomePage());
           return;
         } else{
           IO.red("${IO.t(11)}    Kutilmagan xatolik yuz berdi!");
@@ -139,7 +153,7 @@ class SignUp extends StatelessWidget {
           IO.red("${IO.t(11)}        << ---  |||  --- >> ");
           IO.n(10);
           await Future.delayed(Duration(seconds: 2));
-          Navigation.push(Register());
+          Navigation.pushAndRemoveUntil(Register());
         }
       } else {
         IO.green("${IO.t(11)}    Account tasdiqlanmadi!");
@@ -147,7 +161,7 @@ class SignUp extends StatelessWidget {
         IO.green("${IO.t(11)}     << ---  |||  --- >> ");
         IO.n(10);
         await Future.delayed(Duration(seconds: 2));
-        Navigation.push(Register());
+        Navigation.pushReplacement(Register());
       }
     } else {
       IO.red("${IO.t(11)}    Kutilmagan xatolik yuz berdi");
@@ -155,7 +169,7 @@ class SignUp extends StatelessWidget {
       IO.red("${IO.t(11)}        << ---  |||  --- >> ");
       IO.n(10);
       await Future.delayed(Duration(seconds: 2));
-      Navigation.push(Register());
+      Navigation.pushAndRemoveUntil(Register());
     }
   }
 

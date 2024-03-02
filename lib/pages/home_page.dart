@@ -7,6 +7,8 @@ import 'chat_bot.dart';
 import 'settings.dart';
 
 class HomePage extends StatelessWidget {
+  static String id = "/home_page";
+
   @override
   Future<void> build() async {
     String input;

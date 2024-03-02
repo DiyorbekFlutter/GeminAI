@@ -14,6 +14,6 @@ class ShowEmail extends StatelessWidget {
     IO.blue("${IO.t(11)}       << ---  |||  --- >> ");
     IO.n(10);
     IO.read;
-    Navigation.push(Profile());
+    Navigation.pop();
   }
 }

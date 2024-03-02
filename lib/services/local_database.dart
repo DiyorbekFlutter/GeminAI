@@ -1,9 +1,9 @@
 import 'dart:io';
 
 class Values {
-  static File passwordIsActiveFile = File('data/passwordIsActive.txt');
-  static File registeredFile = File('data/registered.txt');
-  static File emailFile = File('data/email.txt');
+  static File passwordIsActiveFile = File('database/passwordIsActive.txt');
+  static File registeredFile = File('database/registered.txt');
+  static File emailFile = File('database/email.txt');
 
   static bool get passwordIsActive => passwordIsActiveFile.readAsStringSync() == 'true';
   static bool get registered => registeredFile.readAsStringSync() == 'true';

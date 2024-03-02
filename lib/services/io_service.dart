@@ -2,7 +2,7 @@ import 'dart:io';
 
 class IO{
   static void write<T>(T str) => stdout.write(str);
-  static String get read => stdin.readLineSync() ?? "";
+  static String get read => stdin.readLineSync()?.trim() ?? "";
   static String t(int x) => '\t' * x;
   static void n(int x) => print('\n' * (x-1));
 
