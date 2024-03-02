@@ -6,7 +6,6 @@ import 'package:c_group_chat_with_ai/registeration/send_message_to_email.dart';
 import 'package:c_group_chat_with_ai/services/navigation.dart';
 import 'package:c_group_chat_with_ai/services/network/communication_with_api.dart';
 import 'package:c_group_chat_with_ai/stateless_widget.dart';
-import 'package:hive/hive.dart';
 
 import '../services/io_service.dart';
 import '../services/local_database.dart';
@@ -126,8 +125,11 @@ class SignUp extends StatelessWidget {
           IO.green("${IO.t(11)}<<------------------------------>>");
           IO.green("${IO.t(11)}       << ---  |||  --- >> ");
           IO.n(10);
-          Hive.box('${Variables.data}').put('${Variables.registered}', true);
-          Hive.box('${Variables.data}').put('${Variables.email}', email);
+
+          // localga saqlash
+          Values.registeredSave('true');
+          Values.emailSave(email);
+
           await Future.delayed(Duration(seconds: 2));
           Navigation.push(HomePage());
           return;

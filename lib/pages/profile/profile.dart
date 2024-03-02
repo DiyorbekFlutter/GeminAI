@@ -1,4 +1,6 @@
+import 'package:c_group_chat_with_ai/pages/profile/logout.dart';
 import 'package:c_group_chat_with_ai/pages/profile/show_email.dart';
+import 'package:c_group_chat_with_ai/pages/profile/show_password.dart';
 import 'package:c_group_chat_with_ai/stateless_widget.dart';
 
 import '../../services/io_service.dart';
@@ -26,8 +28,8 @@ class Profile extends StatelessWidget {
       IO.blue("${IO.t(13)}Profile\n");
       IO.green("${IO.t(13)}1. Show email");
       IO.green("${IO.t(13)}2. Show password");
-      IO.red("${IO.t(13)}4. Logout");
-      IO.red("${IO.t(13)}3. Delete account");
+      IO.red("${IO.t(13)}3. Logout");
+      IO.red("${IO.t(13)}4. Delete account");
 
       IO.n(1);
       IO.blue("${IO.t(10)}            YOUR CHOICE");
@@ -43,10 +45,10 @@ class Profile extends StatelessWidget {
         Navigation.push(ShowEmail());
         return;
       case '2':
-        // Navigation.push();
+        Navigation.push(ShowPassword());
         return;
       case '3':
-        // Navigation.push();
+        Navigation.push(Logout());
         return;
       case '4':
       // Navigation.push();

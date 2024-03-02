@@ -1,20 +1,15 @@
-import 'package:hive/hive.dart';
+import 'dart:io';
 
 class Values {
-  static Box box = Hive.box('${Variables.data}');
-  static String get password => box.get("${Variables.password}") ?? "";
-  static String get email => box.get("${Variables.email}") ?? "";
-  static bool get passwordIsActive => box.get("${Variables.passwordIsActive}") ?? false;
-  static bool get registered => box.get("${Variables.registered}") ?? false;
+  static File passwordIsActiveFile = File('data/passwordIsActive.txt');
+  static File registeredFile = File('data/registered.txt');
+  static File emailFile = File('data/email.txt');
+
+  static bool get passwordIsActive => passwordIsActiveFile.readAsStringSync() == 'true';
+  static bool get registered => registeredFile.readAsStringSync() == 'true';
+  static String get email => emailFile.readAsStringSync();
+
+  static void passwordIsActiveSave(String value) => passwordIsActiveFile.writeAsString(value);
+  static void registeredSave(String value) => registeredFile.writeAsString(value);
+  static void emailSave(String value) => emailFile.writeAsString(value);
 }
-
-
-
-enum Variables{
-  password,
-  passwordIsActive,
-  registered,
-  email,
-  data
-}
-

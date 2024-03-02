@@ -1,4 +1,4 @@
-import 'package:c_group_chat_with_ai/pages/home_page.dart';
+import 'package:c_group_chat_with_ai/pages/profile/profile.dart';
 import 'package:c_group_chat_with_ai/services/local_database.dart';
 import 'package:c_group_chat_with_ai/services/navigation.dart';
 import 'package:c_group_chat_with_ai/stateless_widget.dart';
@@ -14,6 +14,6 @@ class ShowEmail extends StatelessWidget {
     IO.blue("${IO.t(11)}       << ---  |||  --- >> ");
     IO.n(10);
     IO.read;
-    Navigation.push(HomePage());
+    Navigation.push(Profile());
   }
 }
