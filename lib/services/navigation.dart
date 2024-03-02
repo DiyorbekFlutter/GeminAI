@@ -1,6 +1,3 @@
-import 'package:c_group_chat_with_ai/menu.dart';
-import 'package:c_group_chat_with_ai/pages/home_page.dart';
-
 import '../stateless_widget.dart';
 
 class Navigation {
@@ -26,21 +23,3 @@ class Navigation {
   // }
 
 }
-
-
-
-class MyApp {
-  List<StatelessWidget>initialRoute;
-  StatelessWidget home;
-  MyApp({
-    required this.home,
-    required this.initialRoute,
-
-});
-
-
-
-
-}
-
-
