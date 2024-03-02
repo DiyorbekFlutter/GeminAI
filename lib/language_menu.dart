@@ -1,6 +1,8 @@
 import 'dart:io';
 
+import 'package:c_group_chat_with_ai/pages/settings.dart';
 import 'package:c_group_chat_with_ai/services/extensions_service.dart';
+import 'package:c_group_chat_with_ai/services/navigation.dart';
 
 import '../language.dart';
 import '../services/io_service.dart';
@@ -42,7 +44,8 @@ class LanguageMenu extends StatelessWidget {
     } while(!validInput);
 
     LanguageService.switchLanguage(input);
-    print("muvaffaqiyatli".tr);
+
+    Navigation.push(Settings());
 
   }
 }
