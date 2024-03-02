@@ -34,7 +34,7 @@ const Map<String, String> uz={
   'signup': 'Ro\'yxatdan o\'tish',
   'internetsignali': 'Internet ulanishini tekshirib ko\'ring',
   'tasdiqlanmadi': 'Tasdiqlanmadi!!!',
-
-
-
+  "change_language":"Tilni o'zgartirish",
+  "change_password":"Parolni o'zgartirish",
+  "sound":"Ovoz",
 };
