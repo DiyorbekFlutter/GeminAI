@@ -5,7 +5,7 @@ import '../../services/io_service.dart';
 class DeleteAccount extends StatelessWidget {
   @override
   Future<void> build() async {
-    IO.blueBorder("Delate Accaunt");
+    IO.blueBorderStdout("Delate Accaunt");
 
     String a= IO.read;
     print('ochirmoqchimisiz?');
@@ -15,7 +15,7 @@ class DeleteAccount extends StatelessWidget {
       case '1': {
         print('deleted');
         String b= IO.read;
-        IO.redBorder("haqiqatdan ham ochirmoqchimisiz? ochirilgan hisobni qayta tiklab bolmaydi!");
+        IO.redBorderStdout("haqiqatdan ham ochirmoqchimisiz? ochirilgan hisobni qayta tiklab bolmaydi!");
         print('1. Yes\n');
         print('2. No');
         switch (b){

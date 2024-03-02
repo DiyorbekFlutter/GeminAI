@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'dart:convert';
 import 'api.dart';
-import 'package:http/http.dart' as http;
 
 class CommunicationWithApi {
   static Dio dio = Dio();
@@ -15,27 +14,27 @@ class CommunicationWithApi {
 
 
 
-  static Future sendChatGPTRequest(List<Map<String, dynamic>> messages) async {
-    final endpoint = 'https://api.openai.com/v1/chat/completions';
-    final headers = {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer ${Api.chatGptApiKey}',
-    };
-
-    final body = jsonEncode({
-      'model': 'gpt-3.5-turbo',
-      'messages': messages,
-    });
-
-    try{
-      final http.Response response = await http.post(Uri.parse(endpoint), headers: headers, body: body);
-
-      print("Status Code: ${response.statusCode}");
-      if (response.statusCode == 200) return jsonDecode(response.body);
-    } catch(e){
-      print("Xatolik yuz berdi");
-    }
-  }
+  // static Future sendChatGPTRequest(List<Map<String, dynamic>> messages) async {
+  //   final endpoint = 'https://api.openai.com/v1/chat/completions';
+  //   final headers = {
+  //     'Content-Type': 'application/json',
+  //     'Authorization': 'Bearer ${Api.chatGptApiKey}',
+  //   };
+  //
+  //   final body = jsonEncode({
+  //     'model': 'gpt-3.5-turbo',
+  //     'messages': messages,
+  //   });
+  //
+  //   try{
+  //     final http.Response response = await http.post(Uri.parse(endpoint), headers: headers, body: body);
+  //
+  //     print("Status Code: ${response.statusCode}");
+  //     if (response.statusCode == 200) return jsonDecode(response.body);
+  //   } catch(e){
+  //     print("Xatolik yuz berdi");
+  //   }
+  // }
 
 
 

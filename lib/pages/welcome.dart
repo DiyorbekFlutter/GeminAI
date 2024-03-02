@@ -5,16 +5,14 @@ class Welcome extends StatelessWidget {
   @override
   Future<void> build() async {
     IO.n(1);
-    IO.blue('-' * 116);
-    for(int i=0; i<8; i++) {
-      IO.blue('|${' ' * 114}|');
+    IO.blue('-' * 122);
+    for(int i=0; i<17; i++) {
+      if(i != 9) {
+        IO.blue('|${' ' * 120}|');
+      } else {
+        IO.blue("|${' ' * 50}\x1b[51m\x1b[32m Welcome to ChatGPT \x1b[0m\x1b[0m${' ' * 50}\x1b[34m|\x1b[0m");
+      }
     }
-    IO.blueStdout('|${' ' * 47}');
-    IO.greenBorder(' Welcome to ChatGPT ');
-    IO.blueStdout('${' ' * 47}|\n');
-    for(int i=0; i<8; i++) {
-      IO.blue('|${' ' * 114}|');
-    }
-    IO.blue('-' * 116);
+    IO.blue('-' * 122);
   }
 }
