@@ -35,6 +35,7 @@ const Map<String, String> ru={
   'signup': 'Зарегистрироваться',
   'internetsignali': 'Проверьте подключение к Интернету',
   'tasdiqlanmadi': 'Не одобрено!!!',
-
-
+  "change_language":"Изменение языка",
+  "change_password":"Сменить пароль",
+  "sound":"Звук",
 };

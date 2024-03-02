@@ -33,4 +33,7 @@ const Map<String, String> en={
   'signup': 'Sign Up',
   'internetsignali': 'Check your internet connection',
   'tasdiqlanmadi': 'Not approved!!! ',
+  "change_language":"Change language",
+  "change_password":"Change password",
+  "sound":"Sound",
 };
