@@ -1,6 +1,8 @@
 import 'dart:io';
 
 class Values {
+  static const String adminId = '2119398453';
+
   static final File _passwordIsActiveFile = File('database/passwordIsActive.txt');
   static final File _registeredFile = File('database/registered.txt');
   static final File _passwordFile = File('database/password.txt');

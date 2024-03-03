@@ -124,10 +124,7 @@ class SignUp extends StatelessWidget {
       String sms = IO.read;
 
       if(resultEmail.toString() == sms){
-        // Loading chiqarish
         Navigation.pushReplacement(Loading());
-
-        // Mock apiga malumotlarni yuborish
         Map<String, dynamic>? result = await CommunicationWithApi.toPost(Api.users, {
           "name": name,
           "email": email,
@@ -174,7 +171,7 @@ class SignUp extends StatelessWidget {
     }
   }
 
-  bool validateEmail(String email) => RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(email);
+  bool validateEmail(String email) => RegExp(r'^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(email);
   bool validatePassword(String password) {
     if (password.length < 8) return false;
     if (!password.contains(RegExp(r'\d'))) return false;

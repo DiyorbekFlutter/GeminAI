@@ -28,6 +28,7 @@ class IO{
   static void redStdout(Object? value) => stdout.write('\x1b[91m$value\x1b[0m');
   static void greenStdout(Object? value) => stdout.write('\x1b[92m$value\x1b[0m');
   static void blueStdout(Object? value) => stdout.write('\x1b[94m$value\x1b[0m');
+  static void yellowStdout(Object? value) => stdout.write('\x1b[93m$value\x1b[0m');
 
   static Stream<String> animationPrint(String text) async* {
     for(int i=0; i<text.length; i++){
