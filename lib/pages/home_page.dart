@@ -4,7 +4,7 @@ import 'package:c_group_chat_with_ai/services/navigation.dart';
 import '../services/io_service.dart';
 import '../stateless_widget.dart';
 import 'chat_bot.dart';
-import 'settings.dart';
+import 'settings/settings.dart';
 
 class HomePage extends StatelessWidget {
   static String id = "/home_page";
@@ -32,7 +32,7 @@ class HomePage extends StatelessWidget {
       IO.green("${IO.t(13)}2. Profile");
       IO.green("${IO.t(13)}3. Settings");
 
-      IO.n(1);
+      IO.n(6);
       IO.blue("${IO.t(10)}            YOUR CHOICE");
       IO.blue("${IO.t(10)}  <<--------------------------->>");
       IO.blueStdout("${IO.t(10)}        << ---  |||  ... ");

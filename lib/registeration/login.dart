@@ -15,6 +15,7 @@ class Login extends StatelessWidget {
   Future<void> build() async {
     String email;
     String password;
+    String id = '';
     String userOfPassword = '';
     bool valid = true;
     bool hasUser = false;
@@ -66,6 +67,7 @@ class Login extends StatelessWidget {
         if(user["email"] == email){
           hasUser = true;
           userOfPassword = user["password"];
+          id = user ["id"];
         }
       }
 
@@ -79,6 +81,7 @@ class Login extends StatelessWidget {
           // localga saqlash
           Values.registeredSave('true');
           Values.emailSave(email);
+          Values.idSave(id);
 
           await Future.delayed(Duration(seconds: 2));
           Navigation.pushAndRemoveUntil(HomePage());

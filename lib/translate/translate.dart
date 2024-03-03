@@ -1,23 +1,26 @@
-import '../language.dart';
 import '../local_language/enEn.dart';
 import '../local_language/ruRu.dart';
 import '../local_language/uzUz.dart';
+import '../services/local_database.dart';
 
-extension TranslateString on String{
-  String get tr{
-    switch(LanguageService.getLanguage){
-      case Language.uz:{
-        return uz[this]??this;
-      }
-      case Language.ru:{
-        return ru[this]??this;
-      }
-      case Language.en:{
-        return en[this]??this;
-      }
+extension Translate on String {
+  String get translate {
+    switch(Values.lang){
+      case 'Languages.uz':
+        return uz[this] ?? this;
+      case 'Languages.en':
+        return en[this] ?? this;
+      case 'Languages.ru':
+        return ru[this] ?? this;
     }
+
+    return this;
   }
 }
+
+enum Languages {uz, en, ru}
+
+
 extension TextFormat on String{
 
   String get textBold{

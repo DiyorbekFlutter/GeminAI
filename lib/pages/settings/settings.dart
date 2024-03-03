@@ -1,12 +1,13 @@
-import 'package:c_group_chat_with_ai/services/io_service.dart';
-import 'package:c_group_chat_with_ai/services/navigation.dart';
+import 'package:c_group_chat_with_ai/pages/settings/language_menu.dart';
+import 'package:c_group_chat_with_ai/pages/settings/password/password_menu.dart';
 import 'package:c_group_chat_with_ai/stateless_widget.dart';
-import 'package:c_group_chat_with_ai/pages/settings.dart';
 
-class SoundMenu extends StatelessWidget {
+import '../../services/io_service.dart';
+import '../../services/navigation.dart';
+
+class Settings extends StatelessWidget {
   @override
   Future<void> build() async {
-
     String input;
     bool validInput = true;
 
@@ -23,31 +24,30 @@ class SoundMenu extends StatelessWidget {
       }
 
       IO.n(15);
-      IO.blue("${IO.t(13)}SOUND\n");
-      IO.green("${IO.t(12)}1. yoqish");
-      IO.green("${IO.t(12)}2. o'chirish");
-      IO.green("${IO.t(12)}3. Back");
+      IO.blue("${IO.t(13)}Setting\n");
+      IO.green("${IO.t(12)}1. ${"Language"}");
+      IO.green("${IO.t(12)}2. ${"Password"}");
+      IO.yellow("${IO.t(12)}3. ${'Back'}");
 
-      IO.n(1);
+      IO.n(6);
       IO.blue("${IO.t(10)}            YOUR CHOICE");
       IO.blue("${IO.t(10)}  <<--------------------------->>");
       IO.blueStdout("${IO.t(10)}        << ---  |||  ... ");
       input = IO.read;
 
-      validInput = ['1', '2', '3', '4'].contains(input);
+      validInput = ['1', '2', '3'].contains(input);
     } while(!validInput);
 
     switch(input){
       case '1':
-      // Navigation.push();
+        Navigation.push(LanguageMenu());
         return;
       case '2':
-      // Navigation.push();
+        Navigation.push(PasswordMenu());
         return;
       case '3':
-        Navigation.push(Settings());
+        Navigation.pop();
         return;
     }
-
   }
 }

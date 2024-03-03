@@ -5,46 +5,6 @@ import 'api.dart';
 class CommunicationWithApi {
   static Dio dio = Dio();
 
-
-
-
-
-
-
-
-
-
-  // static Future sendChatGPTRequest(List<Map<String, dynamic>> messages) async {
-  //   final endpoint = 'https://api.openai.com/v1/chat/completions';
-  //   final headers = {
-  //     'Content-Type': 'application/json',
-  //     'Authorization': 'Bearer ${Api.chatGptApiKey}',
-  //   };
-  //
-  //   final body = jsonEncode({
-  //     'model': 'gpt-3.5-turbo',
-  //     'messages': messages,
-  //   });
-  //
-  //   try{
-  //     final http.Response response = await http.post(Uri.parse(endpoint), headers: headers, body: body);
-  //
-  //     print("Status Code: ${response.statusCode}");
-  //     if (response.statusCode == 200) return jsonDecode(response.body);
-  //   } catch(e){
-  //     print("Xatolik yuz berdi");
-  //   }
-  // }
-
-
-
-
-
-
-
-
-
-
   static Future<String?> postToGemini(String text) async {
     String url = "${Api.baseUrlGoogle}${Api.apiGetGeminiText}?key=${Api.geminiAPiKey}";
 
@@ -105,32 +65,32 @@ class CommunicationWithApi {
     return null;
   }
 
-  // static Future<String?> update(String api, String id, Map<String, dynamic> body) async {
-  //   Uri url = Uri.http(Api.baseUrl, "$api/$id");
-  //
-  //   try{
-  //     Response response = await put(url, body: jsonEncode(body), headers: {"Content-Type": "application/json"});
-  //
-  //     if([200, 201].contains(response.statusCode)) return response.body;
-  //   } catch(e){
-  //     return null;
-  //   }
-  //
-  //   return null;
-  // }
-  //
-  // static Future<String?> deleteElement(String api, String id) async {
-  //   Uri url = Uri.https(Api.baseUrl, "$api/$id");
-  //
-  //   try{
-  //     Response response = await delete(url);
-  //
-  //     if([200, 201].contains(response.statusCode)) return response.body;
-  //   } catch(e){
-  //     return null;
-  //   }
-  //
-  //   return null;
-  // }
+  static Future<Map<String, dynamic>?> update(String api, String id, Map<String, dynamic> data) async {
+    String url = "${Api.baseUrl}$api/$id";
+
+    try{
+      Response response = await dio.put(url, data: data);
+      if([200, 201].contains(response.statusCode)) return response.data;
+    } catch(e){
+      return null;
+    }
+
+    return null;
+  }
+
+  static Future<Map<String, dynamic>?> deleteElement(String api, String id) async {
+    String url = "${Api.baseUrl}$api/$id";
+
+    try{
+      Response response = await dio.delete(url);
+
+      print(response.data);
+      if([200, 201].contains(response.statusCode)) return response.data;
+    } catch(e){
+      return null;
+    }
+
+    return null;
+  }
 }
 

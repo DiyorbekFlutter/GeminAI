@@ -1,12 +1,14 @@
-import 'package:c_group_chat_with_ai/pages/settings.dart';
+import 'package:c_group_chat_with_ai/pages/settings/password/install_or_change_password.dart';
+import 'package:c_group_chat_with_ai/pages/settings/password/delete_password.dart';
+import 'package:c_group_chat_with_ai/pages/settings/password/password_on_or_off.dart';
 import 'package:c_group_chat_with_ai/services/io_service.dart';
+import 'package:c_group_chat_with_ai/services/local_database.dart';
 import 'package:c_group_chat_with_ai/services/navigation.dart';
 import 'package:c_group_chat_with_ai/stateless_widget.dart';
 
 class PasswordMenu extends StatelessWidget {
   @override
   Future<void> build() async {
-
     String input;
     bool validInput = true;
 
@@ -24,15 +26,15 @@ class PasswordMenu extends StatelessWidget {
 
       IO.n(15);
       IO.blue("${IO.t(13)}PASSWORD\n");
-      IO.green("${IO.t(12)}1. Password is active");
-      IO.green("${IO.t(12)}2. Update password");
-      IO.green("${IO.t(12)}3. Delete");
-      IO.red("${IO.t(13)}4. Back");
+      IO.green("${IO.t(12)}1. Password ${Values.passwordIsActive ? 'off' : 'on'}");
+      IO.green("${IO.t(12)}2. ${Values.password == '' ? 'Install' : 'Change'} password");
+      IO.green("${IO.t(12)}3. Delete password");
+      IO.yellow("${IO.t(12)}4. Back");
 
-      IO.n(1);
-      IO.blue("${IO.t(10)}            YOUR CHOICE");
-      IO.blue("${IO.t(10)}  <<--------------------------->>");
-      IO.blueStdout("${IO.t(10)}        << ---  |||  ... ");
+      IO.n(6);
+      IO.blue("${IO.t(10)}          YOUR CHOICE");
+      IO.blue("${IO.t(10)}<<--------------------------->>");
+      IO.blueStdout("${IO.t(10)}      << ---  |||  ... ");
       input = IO.read;
 
       validInput = ['1', '2', '3', '4'].contains(input);
@@ -40,16 +42,16 @@ class PasswordMenu extends StatelessWidget {
 
     switch(input){
       case '1':
-        // Navigation.push();
+        Navigation.push(PasswordOnOrOff());
         return;
       case '2':
-        // Navigation.push();
+        Navigation.push(InstallOrChangePassword());
         return;
       case '3':
-        // Navigation.push();
+        Navigation.push(DeletePassword());
         return;
       case '4':
-        Navigation.push(Settings());
+        Navigation.pop();
         return;
     }
 

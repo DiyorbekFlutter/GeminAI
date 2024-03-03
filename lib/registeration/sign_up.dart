@@ -18,6 +18,7 @@ class SignUp extends StatelessWidget {
     String email;
     String password;
     String confirmPassword;
+    String id = '';
     bool valid = true;
     bool hasUser = false;
 
@@ -89,7 +90,7 @@ class SignUp extends StatelessWidget {
       }
 
       if(!hasUser){
-        accountRegistration(email.trim(), name.trim(), password.trim());
+        accountRegistration(email, name, password);
       } else{
         IO.red("${IO.t(11)}    Avval ro'yhatdan o'tgansiz!");
         IO.red("${IO.t(11)}<<------------------------------->>");
@@ -143,6 +144,7 @@ class SignUp extends StatelessWidget {
           // localga saqlash
           Values.registeredSave('true');
           Values.emailSave(email);
+          Values.idSave(result["id"]);
 
           await Future.delayed(Duration(seconds: 2));
           Navigation.pushAndRemoveUntil(HomePage());

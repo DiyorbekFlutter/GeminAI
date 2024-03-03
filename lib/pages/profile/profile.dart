@@ -29,8 +29,9 @@ class Profile extends StatelessWidget {
       IO.blue("${IO.t(13)}Profile\n");
       IO.green("${IO.t(13)}1. Show email");
       IO.green("${IO.t(13)}2. Show password");
-      IO.red("${IO.t(13)}3. Logout");
-      IO.red("${IO.t(13)}4. Delete account");
+      IO.yellow("${IO.t(13)}3. Logout");
+      IO.yellow("${IO.t(13)}4. Delete account");
+      IO.yellow("${IO.t(13)}5. Back");
 
       IO.n(1);
       IO.blue("${IO.t(10)}            YOUR CHOICE");
@@ -38,7 +39,7 @@ class Profile extends StatelessWidget {
       IO.blueStdout("${IO.t(10)}        << ---  |||  ... ");
       input = IO.read;
 
-      validInput = ['1', '2', '3', '4'].contains(input);
+      validInput = ['1', '2', '3', '4', '5'].contains(input);
     } while(!validInput);
 
     switch(input){
@@ -53,6 +54,9 @@ class Profile extends StatelessWidget {
         return;
       case '4':
       Navigation.push(DeleteAccount());
+        return;
+      case '5':
+        Navigation.pop();
         return;
     }
   }
