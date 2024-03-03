@@ -24,9 +24,9 @@ class LanguageMenu extends StatelessWidget {
 
       IO.n(15);
       IO.blue("${IO.t(13)}Language\n");
-      IO.green("${IO.t(12)}1. UZBEK");
-      IO.green("${IO.t(12)}2. ENGLISH");
-      IO.green("${IO.t(12)}3. РУССКИЙ");
+      IO.green("${IO.t(12)}1. UZBEK    ${Values.lang == 'uz' ? '✅' : ''}");
+      IO.green("${IO.t(12)}2. ENGLISH  ${Values.lang == 'en' ? '✅' : ''}");
+      IO.green("${IO.t(12)}3. РУССКИЙ  ${Values.lang == 'ru' ? '✅' : ''}");
       IO.yellow("${IO.t(12)}4. ${'Back'}");
 
       IO.n(1);
@@ -40,13 +40,13 @@ class LanguageMenu extends StatelessWidget {
 
     switch(input){
       case '1':
-        Values.langSave('Languages.uz');
+        Values.langSave('uz');
         break;
       case '2':
-        Values.langSave('Languages.en');
+        Values.langSave('en');
         break;
       case '3':
-        Values.langSave('Languages.ru');
+        Values.langSave('ru');
         break;
       case '4':
         Navigation.pop();

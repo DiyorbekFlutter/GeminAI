@@ -5,7 +5,7 @@ class Loading extends StatelessWidget {
   @override
   Future<void> build() async {
     IO.n(20);
-    IO.blue("${IO.t(15)}Loading...");
+    IO.blue("${IO.t(14)}Loading...");
     IO.n(10);
   }
 }

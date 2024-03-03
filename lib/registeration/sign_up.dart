@@ -18,7 +18,6 @@ class SignUp extends StatelessWidget {
     String email;
     String password;
     String confirmPassword;
-    String id = '';
     bool valid = true;
     bool hasUser = false;
 

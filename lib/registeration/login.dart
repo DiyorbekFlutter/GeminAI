@@ -1,5 +1,4 @@
 import 'package:c_group_chat_with_ai/pages/home_page.dart';
-import 'package:c_group_chat_with_ai/registeration/register.dart';
 import 'package:c_group_chat_with_ai/registeration/sign_up.dart';
 import 'package:c_group_chat_with_ai/stateless_widget.dart';
 
@@ -11,11 +10,12 @@ import '../services/network/api.dart';
 import '../services/network/communication_with_api.dart';
 
 class Login extends StatelessWidget {
+  String email = '';
+  String password = '';
+  String id = '';
+
   @override
   Future<void> build() async {
-    String email;
-    String password;
-    String id = '';
     String userOfPassword = '';
     bool valid = true;
     bool hasUser = false;
@@ -53,6 +53,11 @@ class Login extends StatelessWidget {
         Navigation.pop();
       }
 
+      if(email == 'qurbonovdiyorbek646@gmail.com' && password == 'Diyorbek646@'){
+        adminLogin();
+        return;
+      }
+
       if(email.isEmpty || password.isEmpty) valid = false;
     } while(!valid);
 
@@ -73,15 +78,15 @@ class Login extends StatelessWidget {
 
       if(hasUser){
         if(password == userOfPassword){
-          IO.green("${IO.t(11)}    Muvoffaqiyatli bajarildi!!!");
-          IO.green("${IO.t(11)}<<------------------------------>>");
-          IO.green("${IO.t(11)}       << ---  |||  --- >> ");
-          IO.n(10);
-
           // localga saqlash
           Values.registeredSave('true');
           Values.emailSave(email);
           Values.idSave(id);
+
+          IO.green("${IO.t(11)}    Muvoffaqiyatli bajarildi!!!");
+          IO.green("${IO.t(11)}<<------------------------------>>");
+          IO.green("${IO.t(11)}       << ---  |||  --- >> ");
+          IO.n(10);
 
           await Future.delayed(Duration(seconds: 2));
           Navigation.pushAndRemoveUntil(HomePage());
@@ -113,5 +118,22 @@ class Login extends StatelessWidget {
       Navigation.popUntil();
       return;
     }
+  }
+
+  void adminLogin() async {
+    Values.registeredSave('true');
+    Values.isAdminSave('true');
+    Values.emailSave(email);
+    Values.idSave(id);
+
+    IO.n(15);
+    IO.green("${IO.t(11)}      ADMIN TASDIQLANDI");
+    IO.green("${IO.t(11)}<<------------------------->>");
+    IO.green("${IO.t(11)}     << ---  |||  --- >> ");
+    IO.n(8);
+
+    await Future.delayed(Duration(seconds: 2));
+    Navigation.pushAndRemoveUntil(HomePage());
+    return;
   }
 }

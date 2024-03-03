@@ -1,16 +1,18 @@
-import '../local_language/enEn.dart';
-import '../local_language/ruRu.dart';
-import '../local_language/uzUz.dart';
+import 'en.dart';
+import 'ru.dart';
+import 'uz.dart';
 import '../services/local_database.dart';
 
 extension Translate on String {
   String get translate {
     switch(Values.lang){
-      case 'Languages.uz':
+      case '':
         return uz[this] ?? this;
-      case 'Languages.en':
+      case 'uz':
+        return uz[this] ?? this;
+      case 'en':
         return en[this] ?? this;
-      case 'Languages.ru':
+      case 'ru':
         return ru[this] ?? this;
     }
 

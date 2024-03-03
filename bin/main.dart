@@ -8,6 +8,7 @@ import 'package:c_group_chat_with_ai/services/navigation.dart';
 
 void main() async {
   Navigation.push(Welcome());
+  if(Values.lang == '') Values.langSave('uz');
   Future.delayed(Duration(seconds: 3)).then((value) => App(
     home: Values.registered ? Values.passwordIsActive ? ShowPasswordPage() : HomePage() : Register(),
     routes: {

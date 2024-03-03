@@ -68,6 +68,7 @@ class DeleteAccount extends StatelessWidget {
       Values.registeredSave("false");
       Values.passwordSave("");
       Values.passwordIsActiveSave("false");
+      Values.isAdminSave('false');
       IO.n(16);
       IO.green("${IO.t(11)}     Muvofaqiyatli bajarildi");
       IO.green("${IO.t(11)}<<----------------------------->>");

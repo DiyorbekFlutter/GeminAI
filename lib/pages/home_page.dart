@@ -1,8 +1,10 @@
 import 'package:c_group_chat_with_ai/pages/profile/profile.dart';
+import 'package:c_group_chat_with_ai/services/local_database.dart';
 import 'package:c_group_chat_with_ai/services/navigation.dart';
 
 import '../services/io_service.dart';
 import '../stateless_widget.dart';
+import 'admin.dart';
 import 'chat_bot.dart';
 import 'settings/settings.dart';
 
@@ -31,6 +33,7 @@ class HomePage extends StatelessWidget {
       IO.green("${IO.t(13)}1. Chat bot");
       IO.green("${IO.t(13)}2. Profile");
       IO.green("${IO.t(13)}3. Settings");
+      if(Values.isAdmin) IO.green("${IO.t(13)}4. ADMIN");
 
       IO.n(6);
       IO.blue("${IO.t(10)}            YOUR CHOICE");
@@ -38,7 +41,7 @@ class HomePage extends StatelessWidget {
       IO.blueStdout("${IO.t(10)}        << ---  |||  ... ");
       input = IO.read;
 
-      validInput = ['1', '2', '3'].contains(input);
+      validInput = ['1', '2', '3', if(Values.isAdmin) '4'].contains(input);
     } while(!validInput);
 
     switch(input){
@@ -50,6 +53,9 @@ class HomePage extends StatelessWidget {
         return;
       case '3':
         Navigation.push(Settings());
+        return;
+      case '4':
+        Navigation.push(Admin());
         return;
     }
   }

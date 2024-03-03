@@ -25,6 +25,7 @@ class Logout extends StatelessWidget {
         Values.registeredSave('false');
         Values.passwordSave('');
         Values.passwordIsActiveSave("false");
+        Values.isAdminSave('false');
         Navigation.pushAndRemoveUntil(Register());
       default:
         IO.n(15);
