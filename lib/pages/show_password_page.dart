@@ -2,6 +2,7 @@ import 'package:c_group_chat_with_ai/pages/home_page.dart';
 import 'package:c_group_chat_with_ai/pages/loading.dart';
 import 'package:c_group_chat_with_ai/services/navigation.dart';
 import 'package:c_group_chat_with_ai/stateless_widget.dart';
+import 'package:c_group_chat_with_ai/translate/translate.dart';
 
 import '../services/io_service.dart';
 import '../services/local_database.dart';
@@ -14,7 +15,7 @@ class ShowPasswordPage extends StatelessWidget {
 
     do{
       IO.n(18);
-      IO.blue("${IO.t(12)}        PAROLNI KIRITING");
+      IO.blue("${IO.t(12)}        ${"enter_password".translate}");
       IO.blue("${IO.t(12)}<<----------------------------->>");
       IO.blueStdout("${IO.t(12)}        << ---  |  ... ");
       password = IO.read;
@@ -27,7 +28,7 @@ class ShowPasswordPage extends StatelessWidget {
         return;
       } else {
         IO.n(18);
-        IO.red("${IO.t(12)}        PAROL NOTO'G'RI");
+        IO.red("${IO.t(12)}        ${"password_is_incorrect".translate}");
         IO.red("${IO.t(12)}<<----------------------------->>");
         IO.red("${IO.t(12)}       << ---  ||| --- >>");
         IO.n(8);

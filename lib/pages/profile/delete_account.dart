@@ -3,6 +3,7 @@ import 'package:c_group_chat_with_ai/registeration/register.dart';
 import 'package:c_group_chat_with_ai/services/local_database.dart';
 import 'package:c_group_chat_with_ai/services/network/communication_with_api.dart';
 import 'package:c_group_chat_with_ai/stateless_widget.dart';
+import 'package:c_group_chat_with_ai/translate/translate.dart';
 
 import '../../services/io_service.dart';
 import '../../services/navigation.dart';
@@ -12,13 +13,13 @@ class DeleteAccount extends StatelessWidget {
   @override
   Future<void> build() async {
     IO.n(15);
-    IO.red("${IO.t(11)}     ACCOUNTINGIZ O'CHIRILSINMI ?");
+    IO.red("${IO.t(11)}     ${"delete_your_account".translate}");
     IO.red("${IO.t(11)}<<---------------------------------->>");
     IO.red("${IO.t(11)}         << ---  |||  --- >> ");
     IO.n(6);
-    IO.red("${IO.t(11)}1. O'chirilsin");
-    IO.green("${IO.t(11)}2. Bekor qilish");
-    IO.blueStdout("${IO.t(11)}Your choice: ");
+    IO.red("${IO.t(11)}1. ${"delete_it".translate}");
+    IO.green("${IO.t(11)}2. ${"cancel".translate}");
+    IO.blueStdout("${IO.t(11)}${"your_choice".translate}: ");
     String input = IO.read;
 
 
@@ -29,7 +30,7 @@ class DeleteAccount extends StatelessWidget {
           await deleteAccount();
         } else {
           IO.n(15);
-          IO.red("${IO.t(11)}     Bekor qilindi");
+          IO.red("${IO.t(11)}     ${"canceled".translate}");
           IO.red("${IO.t(11)}<<------------------->>");
           IO.red("${IO.t(11)}  << ---  |||  --- >> ");
           IO.n(6);
@@ -39,7 +40,7 @@ class DeleteAccount extends StatelessWidget {
         return;
       default:
       IO.n(15);
-      IO.red("${IO.t(11)}     Bekor qilindi");
+      IO.red("${IO.t(11)}     ${"canceled".translate}");
       IO.red("${IO.t(11)}<<------------------->>");
       IO.red("${IO.t(11)}  << ---  |||  --- >> ");
       IO.n(6);
@@ -50,11 +51,11 @@ class DeleteAccount extends StatelessWidget {
 
   bool caution(){
     IO.n(15);
-    IO.red("${IO.t(11)}O'chirilgan hisobni qayta tiklab bolmaydi !!!");
+    IO.red("${IO.t(11)}${"to_warn".translate} !!!");
     IO.n(6);
-    IO.red("${IO.t(11)}1. Baribir o'chirilsin");
-    IO.green("${IO.t(11)}2. Bekor qilish");
-    IO.blueStdout("${IO.t(11)}Your choice: ");
+    IO.red("${IO.t(11)}1. ${"delete_it_anyway".translate}");
+    IO.green("${IO.t(11)}2. ${"cancel".translate}");
+    IO.blueStdout("${IO.t(11)}${"your_choice".translate}: ");
     String input = IO.read;
     return input == '1';
   }
@@ -69,8 +70,10 @@ class DeleteAccount extends StatelessWidget {
       Values.passwordSave("");
       Values.passwordIsActiveSave("false");
       Values.isAdminSave('false');
+      Values.langSave("");
+
       IO.n(16);
-      IO.green("${IO.t(11)}     Muvofaqiyatli bajarildi");
+      IO.green("${IO.t(11)}     ${"done_successfully".translate}");
       IO.green("${IO.t(11)}<<----------------------------->>");
       IO.green("${IO.t(11)}       << ---  |||  --- >> ");
       IO.n(10);
@@ -79,7 +82,7 @@ class DeleteAccount extends StatelessWidget {
       return;
     } else {
       IO.n(16);
-      IO.red("${IO.t(11)}    Kutilmagan xatolik yuz berdi");
+      IO.red("${IO.t(11)}    ${"error".translate}");
       IO.red("${IO.t(11)}<<------------------------------->>");
       IO.red("${IO.t(11)}        << ---  |||  --- >> ");
       IO.n(10);

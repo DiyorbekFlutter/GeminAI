@@ -2,6 +2,7 @@ import 'package:c_group_chat_with_ai/pages/loading.dart';
 import 'package:c_group_chat_with_ai/registeration/send_message_to_email.dart';
 import 'package:c_group_chat_with_ai/services/navigation.dart';
 import 'package:c_group_chat_with_ai/stateless_widget.dart';
+import 'package:c_group_chat_with_ai/translate/translate.dart';
 
 import '../../services/io_service.dart';
 
@@ -13,14 +14,14 @@ class ShowPassword extends StatelessWidget {
 
     if(sent){
       IO.n(15);
-      IO.blue("${IO.t(11)}    Parolingiz emailga yuborildi");
+      IO.blue("${IO.t(11)}    ${"send_password_to_email".translate}");
       IO.blue("${IO.t(11)}<<-------------------------------->>");
       IO.blue("${IO.t(11)}        << ---  |||  --- >> ");
       IO.n(10);
       IO.read;
       Navigation.doublePop();
     } else{
-      IO.red("${IO.t(11)}    Kutilmagan xatolik yuz berdi");
+      IO.red("${IO.t(11)}    ${"error".translate}");
       IO.red("${IO.t(11)}<<------------------------------->>");
       IO.red("${IO.t(11)}        << ---  |||  --- >> ");
       IO.n(10);

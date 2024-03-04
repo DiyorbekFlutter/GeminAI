@@ -5,6 +5,7 @@ import 'package:c_group_chat_with_ai/services/io_service.dart';
 import 'package:c_group_chat_with_ai/services/local_database.dart';
 import 'package:c_group_chat_with_ai/services/navigation.dart';
 import 'package:c_group_chat_with_ai/stateless_widget.dart';
+import 'package:c_group_chat_with_ai/translate/translate.dart';
 
 class PasswordMenu extends StatelessWidget {
   @override
@@ -16,7 +17,7 @@ class PasswordMenu extends StatelessWidget {
       IO.n(16);
 
       if(!validInput){
-        IO.red("${IO.t(11)}    Mavjud bo'lmagan bo'lim!!!");
+        IO.red("${IO.t(11)}    ${"not_available".translate}");
         IO.red("${IO.t(11)}<<----------------------------->>");
         IO.red("${IO.t(11)}       << ---  |||  --- >> ");
         IO.n(10);
@@ -25,14 +26,14 @@ class PasswordMenu extends StatelessWidget {
       }
 
       IO.n(15);
-      IO.blue("${IO.t(13)}PASSWORD\n");
-      IO.green("${IO.t(12)}1. Password ${Values.passwordIsActive ? 'off' : 'on'}");
-      IO.green("${IO.t(12)}2. ${Values.password == '' ? 'Install' : 'Change'} password");
-      IO.green("${IO.t(12)}3. Delete password");
-      IO.yellow("${IO.t(12)}4. Back");
+      IO.blue("${IO.t(13)}${"password".translate}\n");
+      IO.green("${IO.t(12)}1. ${Values.passwordIsActive ? 'disable_password'.translate : 'enable_password'.translate}");
+      IO.green("${IO.t(12)}2. ${Values.password == '' ? 'install_password'.translate : 'change_password'.translate}");
+      IO.green("${IO.t(12)}3. ${"delete_password".translate}");
+      IO.yellow("${IO.t(12)}4. ${"back".translate}");
 
       IO.n(6);
-      IO.blue("${IO.t(10)}          YOUR CHOICE");
+      IO.blue("${IO.t(10)}     ${"your_choice".translate}");
       IO.blue("${IO.t(10)}<<--------------------------->>");
       IO.blueStdout("${IO.t(10)}      << ---  |||  ... ");
       input = IO.read;

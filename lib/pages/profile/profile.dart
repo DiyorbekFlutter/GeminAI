@@ -3,6 +3,7 @@ import 'package:c_group_chat_with_ai/pages/profile/logout.dart';
 import 'package:c_group_chat_with_ai/pages/profile/show_email.dart';
 import 'package:c_group_chat_with_ai/pages/profile/show_password.dart';
 import 'package:c_group_chat_with_ai/stateless_widget.dart';
+import 'package:c_group_chat_with_ai/translate/translate.dart';
 
 import '../../services/io_service.dart';
 import '../../services/navigation.dart';
@@ -17,7 +18,7 @@ class Profile extends StatelessWidget {
       IO.n(16);
 
       if(!validInput){
-        IO.red("${IO.t(11)}    Mavjud bo'lmagan bo'lim!!!");
+        IO.red("${IO.t(11)}    ${"not_available".translate}");
         IO.red("${IO.t(11)}<<----------------------------->>");
         IO.red("${IO.t(11)}       << ---  |||  --- >> ");
         IO.n(10);
@@ -26,15 +27,15 @@ class Profile extends StatelessWidget {
       }
 
       IO.n(15);
-      IO.blue("${IO.t(13)}Profile\n");
-      IO.green("${IO.t(13)}1. Show email");
-      IO.green("${IO.t(13)}2. Show password");
-      IO.yellow("${IO.t(13)}3. Logout");
-      IO.yellow("${IO.t(13)}4. Delete account");
-      IO.yellow("${IO.t(13)}5. Back");
+      IO.blue("${IO.t(13)}${"profile".translate}\n");
+      IO.green("${IO.t(13)}1. ${"show_email".translate}");
+      IO.green("${IO.t(13)}2. ${"show_password".translate}");
+      IO.yellow("${IO.t(13)}3. ${"logout".translate}");
+      IO.yellow("${IO.t(13)}4. ${"delete_account".translate}");
+      IO.yellow("${IO.t(13)}5. ${"back".translate}");
 
       IO.n(1);
-      IO.blue("${IO.t(10)}            YOUR CHOICE");
+      IO.blue("${IO.t(10)}            ${"your_choice".translate}");
       IO.blue("${IO.t(10)}  <<--------------------------->>");
       IO.blueStdout("${IO.t(10)}        << ---  |||  ... ");
       input = IO.read;

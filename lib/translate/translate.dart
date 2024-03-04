@@ -1,4 +1,7 @@
+import 'package:c_group_chat_with_ai/translate/tr.dart';
+
 import 'en.dart';
+import 'ko.dart';
 import 'ru.dart';
 import 'uz.dart';
 import '../services/local_database.dart';
@@ -14,13 +17,17 @@ extension Translate on String {
         return en[this] ?? this;
       case 'ru':
         return ru[this] ?? this;
+      case 'tr':
+        return tr[this] ?? this;
+      case 'ko':
+        return ko[this] ?? this;
     }
 
     return this;
   }
 }
 
-enum Languages {uz, en, ru}
+enum Languages {uz, en, ru, tr, ko}
 
 
 extension TextFormat on String{

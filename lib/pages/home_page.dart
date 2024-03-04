@@ -1,6 +1,7 @@
 import 'package:c_group_chat_with_ai/pages/profile/profile.dart';
 import 'package:c_group_chat_with_ai/services/local_database.dart';
 import 'package:c_group_chat_with_ai/services/navigation.dart';
+import 'package:c_group_chat_with_ai/translate/translate.dart';
 
 import '../services/io_service.dart';
 import '../stateless_widget.dart';
@@ -20,7 +21,7 @@ class HomePage extends StatelessWidget {
       IO.n(16);
 
       if(!validInput){
-        IO.red("${IO.t(11)}    Mavjud bo'lmagan bo'lim!!!");
+        IO.red("${IO.t(11)}    ${"not_available".translate}");
         IO.red("${IO.t(11)}<<----------------------------->>");
         IO.red("${IO.t(11)}       << ---  |||  --- >> ");
         IO.n(10);
@@ -29,14 +30,14 @@ class HomePage extends StatelessWidget {
       }
 
       IO.n(15);
-      IO.blue("${IO.t(13)}Home Page\n");
-      IO.green("${IO.t(13)}1. Chat bot");
-      IO.green("${IO.t(13)}2. Profile");
-      IO.green("${IO.t(13)}3. Settings");
-      if(Values.isAdmin) IO.green("${IO.t(13)}4. ADMIN");
+      IO.blue("${IO.t(13)}${"home_page".translate}\n");
+      IO.green("${IO.t(13)}1. ${"chat_bot".translate}");
+      IO.green("${IO.t(13)}2. ${"profile".translate}");
+      IO.green("${IO.t(13)}3. ${"settings".translate}");
+      if(Values.isAdmin) IO.green("${IO.t(13)}4. ${"admin".translate}");
 
       IO.n(6);
-      IO.blue("${IO.t(10)}            YOUR CHOICE");
+      IO.blue("${IO.t(10)}        ${"your_choice".translate}");
       IO.blue("${IO.t(10)}  <<--------------------------->>");
       IO.blueStdout("${IO.t(10)}        << ---  |||  ... ");
       input = IO.read;

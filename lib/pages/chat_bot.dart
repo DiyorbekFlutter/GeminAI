@@ -12,11 +12,11 @@ class ChatBot extends StatelessWidget {
     String input;
 
     IO.n(15);
-    IO.blue("${IO.t(13)}Chat Bot\n");
+    IO.blue("${IO.t(13)}${IO.translate("chat_bot")}\n");
     IO.green("${IO.t(8)}1. New chat");
 
     IO.n(1);
-    IO.blue("${IO.t(10)}            YOUR CHOICE");
+    IO.blue("${IO.t(10)}          ${IO.translate("your_choice")}");
     IO.blue("${IO.t(10)}  <<--------------------------->>");
     IO.blueStdout("${IO.t(10)}        << ---  |||  ... ");
     input = IO.read;
@@ -30,8 +30,8 @@ class ChatBot extends StatelessWidget {
     String previousText = '';
 
     while(true){
-      IO.blue("\nSiz");
-      IO.blueStdout("");
+      IO.blue("\n${IO.translate("you")}");
+      IO.blueStdout(" ");
       input = IO.read;
 
       if(input.toLowerCase() == 'exit'){
@@ -51,16 +51,16 @@ class ChatBot extends StatelessWidget {
         input = '$_';
       }
 
-      IO.blue("\nChat Bot");
+      IO.blue("\n${IO.translate("chat_bot")}");
       var text = await CommunicationWithApi.postToGemini(input);
-      previousText = text ?? 'Kutilmagan xatolik yuz berdi';
+      previousText = text ?? IO.translate('error');
 
       if(text != null){
         await for(var e in IO.animationPrint(text)){
           IO.greenStdout(e);
         }
       } else{
-        IO.red("Kutilmagan xatolik yuz berdi");
+        IO.red(IO.translate('error'));
       }
     }
   }
@@ -92,26 +92,3 @@ class ChatBot extends StatelessWidget {
   }
 }
 
-Map map = {
-  "name": "name",
-  "email": "email",
-  "password": "password",
-  "history": [
-    {
-      "status": "history",
-      "name": "name",
-      "time": DateTime.now().toString().substring(0, 19),
-      "chat": {
-        "answer": "question"
-      },
-    },
-    {
-      "status": "history",
-      "name": "name",
-      "time": DateTime.now().toString().substring(0, 19),
-      "chat": {
-        "answer": "question"
-      },
-    }
-  ]
-};

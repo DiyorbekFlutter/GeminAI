@@ -1,6 +1,7 @@
 import 'package:c_group_chat_with_ai/services/local_database.dart';
 import 'package:c_group_chat_with_ai/services/navigation.dart';
 import 'package:c_group_chat_with_ai/stateless_widget.dart';
+import 'package:c_group_chat_with_ai/translate/translate.dart';
 
 import '../../../services/io_service.dart';
 
@@ -12,7 +13,7 @@ class PasswordOnOrOff extends StatelessWidget {
       if(Values.passwordIsActive){
         Values.passwordIsActiveSave('false');
 
-        IO.green("${IO.t(11)}    Muvofaqiyatli bajarildi");
+        IO.green("${IO.t(11)}    ${"done_successfully".translate}");
         IO.green("${IO.t(11)}<<---------------------------->>");
         IO.green("${IO.t(11)}      << ---  |||  --- >> ");
         IO.n(10);
@@ -21,7 +22,7 @@ class PasswordOnOrOff extends StatelessWidget {
       } else {
         Values.passwordIsActiveSave('true');
 
-        IO.green("${IO.t(11)}    Muvofaqiyatli bajarildi");
+        IO.green("${IO.t(11)}    ${"done_successfully".translate}");
         IO.green("${IO.t(11)}<<---------------------------->>");
         IO.green("${IO.t(11)}      << ---  |||  --- >> ");
         IO.n(10);
@@ -29,7 +30,7 @@ class PasswordOnOrOff extends StatelessWidget {
         Navigation.pop();
       }
     } else {
-      IO.red("${IO.t(11)}     Parol o'rnatilmagan");
+      IO.red("${IO.t(11)}     ${"no_password_set".translate}");
       IO.red("${IO.t(11)}<<------------------------->>");
       IO.red("${IO.t(11)}     << ---  |||  --- >> ");
       IO.n(10);

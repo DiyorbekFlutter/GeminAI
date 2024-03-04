@@ -128,7 +128,7 @@ class SignUp extends StatelessWidget {
         Map<String, dynamic>? result = await CommunicationWithApi.toPost(Api.users, {
           "name": name,
           "email": email,
-          "password": password,
+          "password": password
         });
 
         if(result != null){

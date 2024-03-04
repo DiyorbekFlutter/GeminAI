@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'dart:convert';
+import '../local_database.dart';
 import 'api.dart';
 
 class CommunicationWithApi {
@@ -53,6 +54,18 @@ class CommunicationWithApi {
     return null;
   }
 
+  static Future<Map<String, dynamic>?> getUserById(String api) async {
+    String url = '${Api.baseUrl}$api/${Values.id}';
+
+    try{
+      Response response = await dio.get(url);
+      if([200, 201].contains(response.statusCode)) return response.data;
+    } catch(e){
+      return null;
+    }
+    return null;
+  }
+
   static Future<Map<String, dynamic>?> toPost(String api, Map<String, dynamic> data) async {
     String url = '${Api.baseUrl}$api';
 
@@ -93,4 +106,21 @@ class CommunicationWithApi {
     return null;
   }
 }
+
+
+Map map = {
+  "name": "name",
+  "email": "email",
+  "password": "password",
+  "history": [
+    {
+      "status": "history",
+      "name": "name",
+      "time": DateTime.now().toString().substring(0, 19),
+      "chat": {
+        "answer": "question"
+      },
+    }
+  ]
+};
 

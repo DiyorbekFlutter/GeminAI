@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:c_group_chat_with_ai/translate/translate.dart';
+
 class IO{
   static void write<T>(T str) => stdout.write(str);
   static String get read => stdin.readLineSync()?.trim() ?? "";
@@ -37,6 +39,7 @@ class IO{
     }
   }
 
+  static String translate(String text) => text.translate;
 
 // static void red(Object? value) => print('\x1b[31m$value\x1b[0m');
 // static void green(Object? value) => print('\x1b[32m$value\x1b[0m');

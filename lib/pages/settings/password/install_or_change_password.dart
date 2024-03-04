@@ -1,4 +1,5 @@
 import 'package:c_group_chat_with_ai/stateless_widget.dart';
+import 'package:c_group_chat_with_ai/translate/translate.dart';
 
 import '../../../services/io_service.dart';
 import '../../../services/local_database.dart';
@@ -21,7 +22,7 @@ class InstallOrChangePassword extends StatelessWidget {
           Values.passwordSave(password);
 
           IO.n(15);
-          IO.green("${IO.t(11)}    Muvofaqiyatli bajarildi");
+          IO.green("${IO.t(11)}    ${"done_successfully".translate}");
           IO.green("${IO.t(11)}<<---------------------------->>");
           IO.green("${IO.t(11)}      << ---  |||  --- >> ");
           IO.n(10);
@@ -30,7 +31,7 @@ class InstallOrChangePassword extends StatelessWidget {
           return;
         } else {
           IO.n(15);
-          IO.red("${IO.t(11)}    Malumotlar qabul qilinmadi");
+          IO.red("${IO.t(11)}    ${"data_not_received".translate}");
           IO.red("${IO.t(11)}<<------------------------------>>");
           IO.red("${IO.t(11)}       << ---  |||  --- >> ");
           IO.n(10);
@@ -46,7 +47,7 @@ class InstallOrChangePassword extends StatelessWidget {
           Values.passwordSave(password);
 
           IO.n(15);
-          IO.green("${IO.t(11)}    Muvofaqiyatli bajarildi");
+          IO.green("${IO.t(11)}    ${"done_successfully".translate}");
           IO.green("${IO.t(11)}<<---------------------------->>");
           IO.green("${IO.t(11)}      << ---  |||  --- >> ");
           IO.n(10);
@@ -55,7 +56,7 @@ class InstallOrChangePassword extends StatelessWidget {
           return;
         } else {
           IO.n(15);
-          IO.red("${IO.t(11)}    Malumotlar qabul qilinmadi");
+          IO.red("${IO.t(11)}    ${"data_not_received".translate}");
           IO.red("${IO.t(11)}<<------------------------------>>");
           IO.red("${IO.t(11)}       << ---  |||  --- >> ");
           IO.n(10);
@@ -66,13 +67,13 @@ class InstallOrChangePassword extends StatelessWidget {
   }
 
   bool install(){
-    IO.n(15);
-    IO.blue("${IO.t(12)}Install password");
-    IO.magenta("\n${IO.t(11)}4 ta raqam bo'lishi kerak");
+    IO.n(16);
+    IO.blue("${IO.t(12)}${"install_password".translate}");
+    IO.magenta("\n${IO.t(11)}${"must_be_4_digits".translate}");
 
-    IO.blueStdout("${IO.t(12)}Password: ");
+    IO.blueStdout("${IO.t(12)}${"password".translate}: ");
     password = IO.read;
-    IO.blueStdout("${IO.t(12)}Confirmation password: ");
+    IO.blueStdout("${IO.t(12)}${"confirmation_password".translate}: ");
     confirmationPassword = IO.read;
 
     return RegExp(r'^\d{4}$').hasMatch(password) && password == confirmationPassword;
@@ -80,14 +81,14 @@ class InstallOrChangePassword extends StatelessWidget {
 
   bool change(){
     IO.n(15);
-    IO.blue("${IO.t(12)}Change password: ");
-    IO.magenta("\n${IO.t(11)}4 ta raqam bo'lishi kerak");
+    IO.blue("${IO.t(12)}${"change_password".translate}: ");
+    IO.magenta("\n${IO.t(11)}${"must_be_4_digits".translate}");
 
-    IO.blueStdout("${IO.t(12)}Old password: ");
+    IO.blueStdout("${IO.t(12)}${"current_password".translate}: ");
     oldPassword = IO.read;
-    IO.blueStdout("${IO.t(12)}New password: ");
+    IO.blueStdout("${IO.t(12)}${"new_password".translate}: ");
     password = IO.read;
-    IO.blueStdout("${IO.t(12)}Confirmation new password: ");
+    IO.blueStdout("${IO.t(12)}${"confirmation_new_password".translate}: ");
     confirmationPassword = IO.read;
 
     return oldPassword == Values.password && password == confirmationPassword;
