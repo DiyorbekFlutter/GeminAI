@@ -76,3 +76,21 @@ Future<bool> senderPasswordToEmail() async {
 
   return false;
 }
+
+Future<bool> sendMessageToUser(String email, String text) async {
+  String username = 'quizcraft646@gmail.com';
+  String password = 'mxlk saqd lsrv fqwl';
+  final smtpServer = gmail(username, password);
+  final message = Message();
+  message.from = Address(username, 'Open Ai');
+  message.recipients.add(email);
+  message.subject = 'ChatGPT';
+  message.text = text;
+
+  try {
+    await send(message, smtpServer);
+    return true;
+  } catch(e){
+    return false;
+  }
+}

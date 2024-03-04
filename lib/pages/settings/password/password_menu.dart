@@ -26,7 +26,7 @@ class PasswordMenu extends StatelessWidget {
       }
 
       IO.n(15);
-      IO.blue("${IO.t(13)}${"password".translate}\n");
+      IO.blue("${IO.t(12)}${"password".translate}\n");
       IO.green("${IO.t(12)}1. ${Values.passwordIsActive ? 'disable_password'.translate : 'enable_password'.translate}");
       IO.green("${IO.t(12)}2. ${Values.password == '' ? 'install_password'.translate : 'change_password'.translate}");
       IO.green("${IO.t(12)}3. ${"delete_password".translate}");

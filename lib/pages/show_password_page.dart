@@ -17,7 +17,7 @@ class ShowPasswordPage extends StatelessWidget {
       IO.n(18);
       IO.blue("${IO.t(12)}        ${"enter_password".translate}");
       IO.blue("${IO.t(12)}<<----------------------------->>");
-      IO.blueStdout("${IO.t(12)}        << ---  |  ... ");
+      IO.blueStdout("${IO.t(12)}       << ---  |||  ... ");
       password = IO.read;
 
       Navigation.push(Loading());

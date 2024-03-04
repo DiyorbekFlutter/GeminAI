@@ -61,10 +61,7 @@ class Login extends StatelessWidget {
       if(email.isEmpty || password.isEmpty) valid = false;
     } while(!valid);
 
-    // Loading chiqarish
     Navigation.push(Loading());
-
-    // Userlar ro'yhatini mock apidan olish
     List? users = await CommunicationWithApi.getAll(Api.users);
 
     if(users !=null){
@@ -78,7 +75,6 @@ class Login extends StatelessWidget {
 
       if(hasUser){
         if(password == userOfPassword){
-          // localga saqlash
           Values.registeredSave('true');
           Values.emailSave(email);
           Values.idSave(id);
