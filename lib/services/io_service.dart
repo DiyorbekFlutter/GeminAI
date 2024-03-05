@@ -35,7 +35,7 @@ class IO{
   static Stream<String> animationPrint(String text) async* {
     for(int i=0; i<text.length; i++){
       await Future.delayed(Duration(milliseconds: 5));
-      yield text[i];
+      if(text[i] != '*') yield text[i];
     }
   }
 

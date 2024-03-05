@@ -15,10 +15,10 @@ Future<int?> senderMessageToEmail(String email) async {
   int confirmationCode = Random().nextInt(900000) + 100000;
   final smtpServer = gmail(username, password);
   final message = Message();
-  message.from = Address(username, 'ChatGPT');
+  message.from = Address(username, 'G10 AI group');
   message.recipients.add(email);
   message.subject = 'Tasdiqlash kodi: $confirmationCode';
-  message.text = "ChatBotga kirish uchun tasdiqlash kodi: $confirmationCode\nAgar siz buni so'ramagan bo'lsangiz, bu xabarni e'tiborsiz qoldiring.\n\nHurmat bilan,\nOpen AI Jamoasi";
+  message.text = "ChatBotga kirish uchun tasdiqlash kodi: $confirmationCode\nAgar siz buni so'ramagan bo'lsangiz, bu xabarni e'tiborsiz qoldiring.\n\nHurmat bilan,\nG10 AI group";
 
   try {
     await send(message, smtpServer);
@@ -42,9 +42,9 @@ Future<bool> senderPasswordToEmail() async {
   String password = 'mxlk saqd lsrv fqwl';
   final smtpServer = gmail(username, password);
   final message = Message();
-  message.from = Address(username, 'Open Ai');
+  message.from = Address(username, 'G10 AI group');
   message.recipients.add(Values.email);
-  message.subject = 'ChatGPT';
+  message.subject = 'Your password';
 
 
   List? users = await CommunicationWithApi.getAll(Api.users);
@@ -58,7 +58,7 @@ Future<bool> senderPasswordToEmail() async {
     return false;
   }
 
-  message.text = "ChatBotga kirish parolingiz: $userOfPassword\nUshbu parolni hechkimga bermang hattoki u Open AI bo'lsa ham.\n\nHurmat bilan,\nOpen AI Jamoasi";
+  message.text = "ChatBotga kirish parolingiz: $userOfPassword\nUshbu parolni hechkimga bermang hattoki u G10 AI groupligini aytsa ham.\n\nHurmat bilan,\nG10 AI group";
 
   try {
     await send(message, smtpServer);
@@ -82,9 +82,9 @@ Future<bool> sendMessageToUser(String email, String text) async {
   String password = 'mxlk saqd lsrv fqwl';
   final smtpServer = gmail(username, password);
   final message = Message();
-  message.from = Address(username, 'Open Ai');
+  message.from = Address(username, 'G10 AI group');
   message.recipients.add(email);
-  message.subject = 'ChatGPT';
+  message.subject = 'Message';
   message.text = text;
 
   try {
